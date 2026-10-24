@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for The MK Kollection.">
+    <meta name="theme-color" content="#2E1A20">
+    <title>TERMS OF SERVICE | THE MK KOLLEKTION</title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23FB6F92%22/></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blush: { 50: '#FFE5EC', 100: '#FFC2D1', 200: '#FFB3C6', 300: '#FF8FAB', 400: '#FB6F92', 500: '#E85D7F', 600: '#D14A6A', 900: '#4A2C35', 950: '#2E1A20' },
+                        nude: { 50: '#FFFAFB', 100: '#FFF2F5', 200: '#FFE5EC', 300: '#FFC2D1', 400: '#FFB3C6', 500: '#FF8FAB' },
+                        accent: { 700: '#FB6F92', 800: '#D14A6A' },
+                        ink: { 900: '#4A2C35', 950: '#2E1A20' },
+                        gold: { DEFAULT: '#FF8FAB', light: '#FFE5EC', dark: '#FB6F92' }
+                    },
+                    fontFamily: { serif: ['Cormorant Garamond', 'serif'], sans: ['Montserrat', 'sans-serif'] },
+                    animation: {
+                        'marquee': 'marquee 30s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root { --soft-shadow: 0 8px 30px rgba(251, 111, 146, 0.08); }
+        * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body { background: #FFFAFB; }
+        
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .site-header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); background: rgba(255, 229, 236, 0.92); }
+        
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: #FB6F92; transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .nav-link:hover::after, .nav-link:focus-visible::after, .nav-link[aria-current="page"]::after { width: 100%; }
+
+        .marquee-wrapper { display: flex; overflow: hidden; user-select: none; }
+        .marquee-content { flex-shrink: 0; display: flex; align-items: center; min-width: 100%; gap: 3rem; animation: marquee 35s linear infinite; }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+        .marquee-wrapper:hover .marquee-content { animation-play-state: paused; }
+
+        .skip-link { position: absolute; top: -100px; left: 1rem; background: #2E1A20; color: #FFE5EC; padding: 0.75rem 1.25rem; z-index: 100; transition: top 0.2s; }
+        .skip-link:focus { top: 1rem; }
+
+        /* Legal Content Styling */
+        .legal-content h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.875rem; color: #2E1A20; margin-top: 2.5rem; margin-bottom: 1rem; font-weight: 500; }
+        .legal-content h3 { font-family: 'Montserrat', sans-serif; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #2E1A20; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .legal-content p { font-size: 0.875rem; line-height: 1.8; color: rgba(74, 44, 53, 0.8); margin-bottom: 1rem; font-weight: 300; }
+        .legal-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .legal-content li { font-size: 0.875rem; line-height: 1.8; color: rgba(74, 44, 53, 0.8); margin-bottom: 0.5rem; font-weight: 300; }
+        .legal-content a { color: #FB6F92; text-decoration: underline; text-underline-offset: 4px; transition: color 0.2s; }
+        .legal-content a:hover { color: #2E1A20; }
+    </style>
+</head>
+
+<body class="text-ink-900 font-sans antialiased selection:bg-blush-300 selection:text-ink-950 overflow-x-hidden">
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Announcement Bar -->
+    <div class="bg-ink-950 text-blush-100 py-2.5 overflow-hidden" aria-hidden="true">
+        <div class="marquee-wrapper">
+            <div class="marquee-content">
+                <span class="text-[10px] tracking-[0.3em] uppercase font-light whitespace-nowrap">Complimentary Express Shipping on Orders £250+</span>
+                <span class="text-gold text-[8px]">✦</span>
+                <span class="text-[10px] tracking-[0.3em] uppercase font-light whitespace-nowrap">100% Raw Single Donor Hair</span>
+                <span class="text-gold text-[8px]">✦</span>
+                <span class="text-[10px] tracking-[0.3em] uppercase font-light whitespace-nowrap">New Luxury Blends Just Dropped</span>
+                <span class="text-gold text-[8px]">✦</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="site-header border-b border-ink-950/10 shadow-sm">
+        <div class="mx-auto max-w-7xl px-5 lg:px-10">
+            <div class="flex h-[76px] items-center justify-between gap-4">
+                <button id="mobile-menu-btn" type="button" aria-label="Open navigation menu" class="-ml-2 rounded-full p-2.5 text-ink-950 transition-colors hover:bg-ink-950/5 lg:hidden">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
+                <nav aria-label="Main navigation" class="hidden items-center space-x-7 text-[10px] font-semibold uppercase tracking-[0.18em] text-ink-950 lg:flex xl:space-x-9">
+                    <a href="index.html" class="nav-link transition-colors hover:text-accent-800">Home</a>
+                    <a href="shop.html" class="nav-link transition-colors hover:text-accent-800">Shop Collection</a>
+                    <a href="about.html" class="nav-link transition-colors hover:text-accent-800">About us</a>
+                    <a href="contact.html" class="nav-link transition-colors hover:text-accent-800">Contact</a>
+                </nav>
+                <a href="index.html" aria-label="MK Kollection home" class="group flex-shrink-0 p-1 transition-transform duration-300 hover:scale-105">
+                    <span class="flex h-[54px] w-[54px] items-center justify-center">
+                        <img src="logo.jpg" alt="MK Kollection Logo" width="54" height="54" loading="eager" class="h-full w-full object-contain">
+                    </span>
+                </a>
+                <div class="flex items-center space-x-2 sm:space-x-3">
+                    <a href="shop.html" aria-label="Shopping bag" class="relative rounded-full p-2.5 text-ink-950 transition-colors hover:bg-ink-950/5">
+                        <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden border-t border-ink-950/10 bg-blush-50 shadow-2xl lg:hidden">
+            <nav class="space-y-1 px-6 py-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-ink-950">
+                <a href="index.html" class="block border-b border-ink-950/10 py-3 transition-colors hover:text-accent-800">Home</a>
+                <a href="shop.html" class="block border-b border-ink-950/10 py-3 transition-colors hover:text-accent-800">Shop Collection</a>
+                <a href="about.html" class="block border-b border-ink-950/10 py-3 transition-colors hover:text-accent-800">About us</a>
+                <a href="contact.html" class="block py-3 transition-colors hover:text-accent-800">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Page Hero -->
+        <section class="relative min-h-[30vh] overflow-hidden bg-ink-950 flex items-center justify-center text-center py-16">
+            <div class="absolute inset-0 opacity-20 bg-[url('https://i.pinimg.com/736x/44/ba/04/44ba04b8eeedb67fa5eb482fc9315b85.jpg')] bg-cover bg-center"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/60 to-transparent"></div>
+            <div class="relative z-10 px-5 max-w-3xl mx-auto reveal">
+                <h1 class="font-serif text-4xl md:text-5xl text-blush-50 mb-4">Terms of Service</h1>
+                <p class="text-[10px] uppercase tracking-[0.3em] text-blush-200">Last Updated: October 2026</p>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <section class="py-20 bg-nude-50">
+            <div class="max-w-4xl mx-auto px-5 lg:px-10 legal-content reveal">
+                
+                <h2>1. Overview</h2>
+                <p>This website is operated by <strong>The MK Kollection</strong>. Throughout the site, the terms "we", "us" and "our" refer to The MK Kollection. We offer this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.</p>
+                <p>By visiting our site and/ or purchasing something from us, you engage in our "Service" and agree to be bound by the following terms and conditions. Please read these Terms of Service carefully before accessing or using our website.</p>
+
+                <h2>2. Online Store Terms</h2>
+                <p>By agreeing to these Terms of Service, you represent that you are at least the age of majority in your state or province of residence. You may not use our products for any illegal or unauthorized purpose nor may you, in the use of the Service, violate any laws in your jurisdiction.</p>
+
+                <h2>3. Products and Services</h2>
+                <p>Certain products or services may be available exclusively online through the website. These products or services may have limited quantities and are subject to return or exchange only according to our Return Policy.</p>
+                <p>We have made every effort to display as accurately as possible the colors and images of our products that appear at the store. We cannot guarantee that your computer monitor's display of any color will be accurate. All descriptions of products or product pricing are subject to change at anytime without notice, at the sole discretion of us.</p>
+
+                <h2>4. Purchases and Payment</h2>
+                <p>We reserve the right to refuse any order you place with us. We may, in our sole discretion, limit or cancel quantities purchased per person, per household or per order.</p>
+                <p>You agree to provide current, complete and accurate purchase and account information for all purchases made at our store. We utilize secure third-party payment gateways including Stripe, PayPal, Klarna, Apple Pay, and Google Pay. You agree to promptly update your account and other information, including your email address and credit card numbers and expiration dates, so that we can complete your transactions and contact you as needed.</p>
+
+                <h2>5. Shipping and Delivery</h2>
+                <p>All orders are subject to availability and confirmation of the order price. Dispatch times may vary according to availability and subject to any delays resulting from postal delays or force majeure for which we will not be responsible.</p>
+                <p>You are responsible for ensuring that the delivery details you provide are accurate. We cannot be held responsible for delayed or undelivered orders due to incorrect addresses provided by the customer.</p>
+
+                <h2>6. Returns and Refunds</h2>
+                <p>Due to the nature of our products (100% raw human hair and hair extensions), <strong>we strictly do not accept returns or exchanges on any hair products that have been opened, worn, or altered.</strong></p>
+                <p>For hygiene and safety reasons, all hair sales are final once the security seal/packaging is broken. If you receive a defective or incorrect item, you must contact us within 48 hours of delivery with photographic evidence, and the item must remain in its original, unopened packaging.</p>
+
+                <h2>7. Intellectual Property</h2>
+                <p>All content included on this site, such as text, graphics, logos, images, audio clips, digital downloads, data compilations, and software, is the property of The MK Kollection or its content suppliers and protected by international copyright laws.</p>
+
+                <h2>8. Contact Information</h2>
+                <p>Questions about the Terms of Service should be sent to us at:</p>
+                <p>
+                    <strong>The MK Kollection</strong><br>
+                    Email: <a href="mailto:hello@thekolllection.com">hello@thekolllection.com</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-ink-950 text-blush-100 pt-20 pb-10 border-t border-blush-400/20">
+        <div class="max-w-[1400px] mx-auto px-5 lg:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+                <div class="space-y-6">
+                    <a href="#" class="inline-block" aria-label="MK Kollection home">
+                        <img src="./logo.jpg" alt="MK Kollection" loading="lazy" width="140" height="45" class="h-10 w-auto object-contain">
+                    </a>
+                    <p class="text-xs font-light leading-relaxed text-blush-100/75 max-w-xs">
+                        Elevating your beauty with 100% raw single-donor hair, seamless HD lace, and signature luxury blends.
+                    </p>
+                </div>
+                <nav aria-label="Shop">
+                    <h2 class="font-serif text-lg text-blush-50 mb-6">Shop</h2>
+                    <ul class="space-y-3 text-xs font-light tracking-wide text-blush-100/75">
+                        <li><a href="shop.html" class="hover:text-blush-300 transition-colors">Luxury Wigs</a></li>
+                        <li><a href="shop.html" class="hover:text-blush-300 transition-colors">Raw Bundles</a></li>
+                        <li><a href="shop.html" class="hover:text-blush-300 transition-colors">HD Frontals</a></li>
+                        <li><a href="shop.html" class="hover:text-blush-300 transition-colors">Signature Blends</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Support">
+                    <h2 class="font-serif text-lg text-blush-50 mb-6">Support</h2>
+                    <ul class="space-y-3 text-xs font-light tracking-wide text-blush-100/75">
+                        <li><a href="contact.html" class="hover:text-blush-300 transition-colors">Contact Us</a></li>
+                        <li><a href="shipping-returns.html" class="hover:text-blush-300 transition-colors">Shipping & Returns</a></li>
+                        <li><a href="about.html" class="hover:text-blush-300 transition-colors">FAQ</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2 class="font-serif text-lg text-blush-50 mb-6">Join The Kollection</h2>
+                    <form class="space-y-3" novalidate>
+                        <input type="email" required placeholder="Your email address" class="w-full bg-ink-900 border border-blush-400/30 rounded-none px-4 py-3 text-xs text-blush-50 placeholder-blush-200/60 focus:outline-none focus:border-blush-300 transition-colors">
+                        <button type="submit" class="w-full bg-blush-400 hover:bg-blush-500 text-ink-950 text-[10px] font-bold uppercase tracking-[0.2em] py-3.5 transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-blush-400/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-blush-200/60 tracking-wider">&copy; 2026 THE MK KOLLEKTION. All rights reserved.</p>
+                <div class="flex gap-6 text-[10px] text-blush-200/60 tracking-wider">
+                    <a href="policy.html" class="hover:text-blush-200 transition-colors">Privacy Policy</a>
+                    <a href="terms.html" class="text-blush-300 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        const revealElements = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => revealObserver.observe(el));
+        } else {
+            revealElements.forEach(el => el.classList.add('active'));
+        }
+    </script>
+</body>
+</html>
