@@ -437,6 +437,13 @@
                 </div>
             </div>
         </section>
+
+        <section class="py-8 bg-blush-50 border-t border-blush-200/50" aria-labelledby="delivery-policy-title">
+            <div class="max-w-[1200px] mx-auto px-5 lg:px-10 text-center">
+                <h2 id="delivery-policy-title" class="font-serif text-xl text-ink-950">Delivery &amp; Returns Policy</h2>
+                <p class="mt-2 text-[10px] leading-relaxed text-ink-900/60">Standard delivery £5 (5–9 working days) · Next day delivery £15. We don’t offer refunds or exchanges.</p>
+            </div>
+        </section>
     </main>
 
     <!-- CART DRAWER -->
@@ -455,7 +462,7 @@
         <div id="cart-footer" class="p-6 border-t border-blush-200 bg-white hidden">
             <!-- Promo -->
             <div class="mb-4">
-                <label for="promo-input" class="block text-[10px] font-bold uppercase tracking-widest text-ink-900 mb-2">Promo Code</label>
+                <label for="promo-input" class="block text-[10px] font-bold uppercase tracking-widest text-ink-900 mb-2">Discount code / coupon</label>
                 <div class="flex gap-2">
                     <input id="promo-input" type="text" inputmode="text" autocomplete="off" placeholder="e.g. LAUNCH10"
                            aria-describedby="promo-status"
@@ -468,6 +475,14 @@
                 </div>
             </div>
 
+            <div class="mb-4">
+                <label for="delivery-method" class="block text-[10px] font-bold uppercase tracking-widest text-ink-900 mb-2">Delivery</label>
+                <select id="delivery-method" class="w-full bg-white border border-blush-200 rounded-md px-3 py-2.5 text-xs text-ink-950 focus:outline-none focus:border-blush-400 focus:ring-2 focus:ring-blush-300/40">
+                    <option value="standard">Standard Delivery — £5 (5–9 working days)</option>
+                    <option value="next-day">Next Day Delivery — £15</option>
+                </select>
+            </div>
+
             <!-- Totals -->
             <div class="space-y-2 mb-4">
                 <div class="flex justify-between items-center text-[11px] font-semibold uppercase tracking-wider text-ink-900">
@@ -477,6 +492,10 @@
                 <div id="discount-row" class="hidden justify-between items-center text-[11px] font-semibold uppercase tracking-wider text-blush-500">
                     <span id="discount-label">Discount</span>
                     <span id="discount-amount" class="font-serif text-lg normal-case tracking-normal">−£0.00</span>
+                </div>
+                <div class="flex justify-between items-center text-[11px] font-semibold uppercase tracking-wider text-ink-900">
+                    <span>Shipping</span>
+                    <span id="cart-shipping" class="font-serif text-lg text-ink-950 normal-case tracking-normal">£5.00</span>
                 </div>
                 <div class="flex justify-between items-center pt-2 border-t border-blush-200">
                     <span class="text-[11px] font-bold uppercase tracking-wider text-ink-950">Total</span>
@@ -497,7 +516,7 @@
 
             <div class="grid grid-cols-2 gap-2 mt-2">
                 <button type="button" onclick="openCheckout()" class="bg-[#FFB3C7] text-[#17120F] font-bold py-3 rounded flex items-center justify-center text-[10px] uppercase hover:brightness-95 transition-all">Klarna</button>
-                <button type="button" onclick="openCheckout()" class="bg-[#003087] text-white font-bold py-3 rounded flex items-center justify-center text-[10px] uppercase italic hover:brightness-95 transition-all">Pay<span class="text-[#009cde]">Pal</span></button>
+                <button type="button" onclick="window.location.href='https://www.paypal.me/myaodaroo'" class="bg-[#003087] text-white font-bold py-3 rounded flex items-center justify-center text-[10px] uppercase italic hover:brightness-95 transition-all">Pay<span class="text-[#009cde]">Pal</span></button>
                 <button type="button" onclick="openCheckout()" class="bg-black text-white font-bold py-3 rounded flex items-center justify-center text-[10px] gap-1 hover:brightness-110 transition-all">
                     <svg class="w-4 h-4" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
                     Pay
@@ -526,7 +545,7 @@
                     Pay with Card (Stripe)
                 </button>
 
-                <button type="button" onclick="openCheckout()" class="w-full bg-[#FFC439] text-[#003087] py-4 rounded-lg flex items-center justify-center gap-3 text-sm font-bold shadow-md hover:brightness-95 transition-all">
+                <button type="button" onclick="window.location.href='https://www.paypal.me/myaodaroo'" class="w-full bg-[#FFC439] text-[#003087] py-4 rounded-lg flex items-center justify-center gap-3 text-sm font-bold shadow-md hover:brightness-95 transition-all">
                     Pay with <span class="italic text-[#009cde]">PayPal</span>
                 </button>
 
@@ -662,12 +681,12 @@
             { len: '28"', base: 330 }, { len: '30"', base: 350 }
         ];
         const humanData = [
-            { len: '10"', base: 85 }, { len: '12"', base: 95 }, { len: '14"', base: 105 },
-            { len: '16"', base: 115 }, { len: '18"', base: 125 }, { len: '20"', base: 130 },
-            { len: '22"', base: 145 }, { len: '24"', base: 155 }, { len: '26"', base: 170 },
-            { len: '28"', base: 190 }, { len: '30"', base: 210 }, { len: '32"', base: 235 },
-            { len: '34"', base: 255 }, { len: '36"', base: 285 }, { len: '38"', base: 320 },
-            { len: '40"', base: 350 }
+            { len: '10"', base: 75 }, { len: '12"', base: 75 }, { len: '14"', base: 75 },
+            { len: '16"', base: 75 }, { len: '18"', base: 75 }, { len: '20"', base: 75 },
+            { len: '22"', base: 75 }, { len: '24"', base: 75 }, { len: '26"', base: 75 },
+            { len: '28"', base: 75 }, { len: '30"', base: 75 }, { len: '32"', base: 75 },
+            { len: '34"', base: 75 }, { len: '36"', base: 75 }, { len: '38"', base: 75 },
+            { len: '40"', base: 75 }
         ];
         const singleData = [
             { len: '10"', base: 45 }, { len: '12"', base: 50 }, { len: '14"', base: 55 },
@@ -703,6 +722,12 @@
 
         /* ---------- Promo codes ---------- */
         const PROMO_KEY = 'mk_promo_v1';
+        const DELIVERY_KEY = 'mk_delivery_v1';
+        let deliveryMethod = 'standard';
+        try {
+            const savedDelivery = localStorage.getItem(DELIVERY_KEY);
+            if (savedDelivery === 'standard' || savedDelivery === 'next-day') deliveryMethod = savedDelivery;
+        } catch {}
         const PROMO_CODES = {
             LAUNCH10: {
                 type: 'percent',
@@ -727,6 +752,7 @@
         }
         function computeTotals() {
             const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
+            const shipping = cart.length ? (deliveryMethod === 'next-day' ? 15 : 5) : 0;
             const promo = getActivePromo();
             let discount = 0;
             if (promo && subtotal >= (promo.minSubtotal || 0)) {
@@ -734,8 +760,8 @@
                 else if (promo.type === 'fixed') discount = Math.min(promo.value, subtotal);
             }
             discount = Math.max(0, Math.min(subtotal, Math.round(discount * 100) / 100));
-            const total = Math.max(0, Math.round((subtotal - discount) * 100) / 100);
-            return { subtotal, discount, total, promo };
+            const total = Math.max(0, Math.round((subtotal - discount + shipping) * 100) / 100);
+            return { subtotal, discount, shipping, total, promo };
         }
         function setPromoStatus(msg, kind) {
             const el = document.getElementById('promo-status');
@@ -812,6 +838,7 @@
             const badge = document.getElementById('cart-count');
             const totalEl = document.getElementById('cart-total');
             const subtotalEl = document.getElementById('cart-subtotal');
+            const shippingEl = document.getElementById('cart-shipping');
             const discRow = document.getElementById('discount-row');
             const discAmt = document.getElementById('discount-amount');
             const discLabel = document.getElementById('discount-label');
@@ -831,6 +858,7 @@
                     </div>`;
                 footer.classList.add('hidden');
                 if (subtotalEl) subtotalEl.textContent = '£0.00';
+                if (shippingEl) shippingEl.textContent = '£0.00';
                 if (totalEl) totalEl.textContent = '£0.00';
                 if (discRow) { discRow.classList.add('hidden'); discRow.classList.remove('flex'); }
                 return;
@@ -863,8 +891,9 @@
                 </div>`;
             }).join('');
 
-            const { subtotal, discount, total, promo } = computeTotals();
+            const { subtotal, discount, shipping, total, promo } = computeTotals();
             if (subtotalEl) subtotalEl.textContent = `£${subtotal.toFixed(2)}`;
+            if (shippingEl) shippingEl.textContent = `£${shipping.toFixed(2)}`;
             if (totalEl) totalEl.textContent = `£${total.toFixed(2)}`;
 
             if (discRow && discAmt && discLabel) {
@@ -970,7 +999,7 @@
 
         function openCheckout() {
             if (cart.length === 0) return;
-            const { total, discount, promo } = computeTotals();
+            const { total, discount, shipping, promo } = computeTotals();
 
             if (STRIPE_PAYMENT_LINK) {
                 try {
@@ -1000,6 +1029,7 @@
                         ${lines.map(l => `<div>${escapeHtml(l)}</div>`).join('')}
                     </div>
                     ${promo ? `<div class="text-left text-[11px] text-blush-500 font-semibold mb-1">Discount (${escapeHtml(promo.code)}): −£${discount.toFixed(2)}</div>` : ''}
+                    <div class="text-left text-[11px] text-ink-900/70 mb-1">Shipping (${deliveryMethod === 'next-day' ? 'Next day' : 'Standard'}): £${shipping.toFixed(2)}</div>
                     <div class="text-left text-sm font-bold text-ink-950">Total: £${total.toFixed(2)}</div>
                 `;
             }
@@ -1026,6 +1056,15 @@
             document.getElementById('promo-input')?.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter') { e.preventDefault(); applyPromo(); }
             });
+            const deliverySelect = document.getElementById('delivery-method');
+            if (deliverySelect) {
+                deliverySelect.value = deliveryMethod;
+                deliverySelect.addEventListener('change', () => {
+                    deliveryMethod = deliverySelect.value === 'next-day' ? 'next-day' : 'standard';
+                    try { localStorage.setItem(DELIVERY_KEY, deliveryMethod); } catch {}
+                    updateCartUI();
+                });
+            }
         });
 
         /* ---------- Expose to inline handlers ---------- */
