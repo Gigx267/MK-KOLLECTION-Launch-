@@ -712,6 +712,71 @@
         btnElement.classList.add('border-gold-dark', 'opacity-100');
     }
 </script>
+<!-- Signature Collection: Honey Luxe Unit Spotlight -->
+<section id="signature-collection" class="py-20 lg:py-28 px-5 lg:px-10 bg-blush-50">
+    <div class="max-w-[1200px] mx-auto">
+        <div class="text-center mb-10 reveal">
+            <span class="text-[10px] tracking-[0.4em] uppercase text-gold-dark font-semibold block mb-2">100% Human Hair</span>
+            <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-ink-950 tracking-tight leading-[1.1]">
+                The <span class="italic font-light">Honey Luxe Unit</span>
+            </h2>
+        </div>
+
+        <!-- Compact Card Spotlight -->
+        <div class="max-w-md mx-auto bg-white rounded-[1.5rem] p-4 md:p-5 shadow-sm reveal">
+            <!-- Main Display Frame -->
+            <div class="relative aspect-[4/5] rounded-[1.2rem] overflow-hidden bg-blush-50 mb-4">
+                <img id="honey-main-img" src="./honey (1).jpeg" alt="Our Honey Luxe Unit - Front Angle" class="w-full h-full object-cover transition-opacity duration-300">
+                <span id="honey-angle-badge" class="absolute top-3 left-3 bg-ink-950/80 backdrop-blur-md text-blush-50 text-[8px] tracking-[0.2em] uppercase px-2.5 py-1 rounded-full font-semibold">Front View</span>
+            </div>
+
+            <!-- Angle Selector Thumbnails -->
+            <div class="grid grid-cols-4 gap-2 mb-5">
+                <button onclick="switchHoneyAngle('sza] (4).jpeg', 'Front View', this)" class="honey-thumb border-2 border-gold-dark rounded-lg overflow-hidden aspect-square transition-all opacity-100 focus:outline-none">
+                    <img src="./honey (1).jpeg" alt="Front View" class="w-full h-full object-cover">
+                </button>
+                <button onclick="switchHoneyAngle('sza] (5).jpeg', 'Side Profile', this)" class="honey-thumb border-2 border-transparent rounded-lg overflow-hidden aspect-square transition-all opacity-60 hover:opacity-100 focus:outline-none">
+                    <img src="./honey (2).jpeg" alt="Side Profile" class="w-full h-full object-cover">
+                </button>
+              
+                
+            </div>
+
+            <!-- Compact Details & Call to Action -->
+            <div class="text-center px-2">
+                <p class="text-[9px] tracking-[0.3em] uppercase text-gold-dark font-semibold mb-1">100% Human Hair</p>
+                <h3 class="font-serif text-xl md:text-2xl text-ink-950 mb-3">Our Honey Luxe Unit</h3>
+                <a href="shop.html?product=honey-luxe-unit" class="inline-flex items-center justify-center w-full rounded-full bg-ink-950 px-5 py-3 text-[10px] tracking-[0.2em] uppercase font-semibold text-blush-50 hover:bg-ink-900 transition-colors shadow-sm">
+                    Shop &amp; Checkout
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Script for Angle Switching -->
+<script>
+    function switchHoneyAngle(imageSrc, angleLabel, btnElement) {
+        const mainImg = document.getElementById('honey-main-img');
+        const badge = document.getElementById('honey-angle-badge');
+        
+        mainImg.style.opacity = '0.3';
+        
+        setTimeout(() => {
+            mainImg.src = imageSrc;
+            badge.textContent = angleLabel;
+            mainImg.style.opacity = '1';
+        }, 150);
+
+        document.querySelectorAll('.honey-thumb').forEach(thumb => {
+            thumb.classList.remove('border-gold-dark', 'opacity-100');
+            thumb.classList.add('border-transparent', 'opacity-60');
+        });
+
+        btnElement.classList.remove('border-transparent', 'opacity-60');
+        btnElement.classList.add('border-gold-dark', 'opacity-100');
+    }
+</script>
         <!-- About Us -->
         <section id="story" class="py-24 bg-blush-50 relative overflow-hidden">
             <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blush-200/50 blur-3xl" aria-hidden="true"></div>
