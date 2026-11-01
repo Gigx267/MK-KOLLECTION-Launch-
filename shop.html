@@ -408,6 +408,9 @@
                     <label class="cursor-pointer group">
                         <input type="checkbox" id="toggle-bundle-texture" class="toggle-checkbox hidden" onchange="renderBundleTables()">
                         <div class="toggle-label flex items-center gap-3 bg-white text-ink-950 px-6 py-3 rounded-full border border-blush-200 shadow-sm transition-all duration-300 hover:border-blush-400">
+                                               <label class="cursor-pointer group">
+                        <input type="checkbox" id="toggle-bundle-texture" class="toggle-checkbox hidden" onchange="renderBundleTables()">
+                        <div class="toggle-label flex items-center gap-3 bg-white text-ink-950 px-6 py-3 rounded-full border border-blush-200 shadow-sm transition-all duration-300 hover:border-blush-400">
                             <svg class="w-4 h-4 stroke-ink-950 transition-colors" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                             <span class="text-[10px] font-bold uppercase tracking-widest">Add Non-Straight Texture (+£15)</span>
                         </div>
@@ -680,13 +683,16 @@
             { len: '22"', base: 280 }, { len: '24"', base: 295 }, { len: '26"', base: 315 },
             { len: '28"', base: 330 }, { len: '30"', base: 350 }
         ];
+
+        // 100% HUMAN HAIR — mid-tier pricing (between Virgin Hair and Bundles)
+        // Ascending by length. HD lace adds +£25, texture adds +£10 (stackable).
         const humanData = [
-            { len: '10"', base: 75 }, { len: '12"', base: 75 }, { len: '14"', base: 75 },
-            { len: '16"', base: 75 }, { len: '18"', base: 75 }, { len: '20"', base: 75 },
-            { len: '22"', base: 75 }, { len: '24"', base: 75 }, { len: '26"', base: 75 },
-            { len: '28"', base: 75 }, { len: '30"', base: 75 }, { len: '32"', base: 75 },
-            { len: '34"', base: 75 }, { len: '36"', base: 75 }, { len: '38"', base: 75 },
-            { len: '40"', base: 75 }
+            { len: '10"', base: 120 }, { len: '12"', base: 130 }, { len: '14"', base: 145 },
+            { len: '16"', base: 155 }, { len: '18"', base: 170 }, { len: '20"', base: 185 },
+            { len: '22"', base: 200 }, { len: '24"', base: 215 }, { len: '26"', base: 235 },
+            { len: '28"', base: 250 }, { len: '30"', base: 265 }, { len: '32"', base: 280 },
+            { len: '34"', base: 295 }, { len: '36"', base: 310 }, { len: '38"', base: 325 },
+            { len: '40"', base: 340 }
         ];
         const singleData = [
             { len: '10"', base: 45 }, { len: '12"', base: 50 }, { len: '14"', base: 55 },
@@ -715,7 +721,7 @@
         function escapeAttr(s) {
             return escapeHtml(s).replace(/\\/g, '\\\\');
         }
-        function announce(msg) {
+               function announce(msg) {
             const el = document.getElementById('cart-live');
             if (el) el.textContent = msg;
         }
@@ -783,13 +789,13 @@
             const code = (input.value || '').trim().toUpperCase();
             if (!code) { setPromoStatus('Enter a code to apply.', 'error'); return; }
             const def = PROMO_CODES[code];
-            if (!def) { setPromoStatus(`“${code}” isn’t a valid code.`, 'error'); return; }
+            if (!def) { setPromoStatus(`"${code}" isn't a valid code.`, 'error'); return; }
             if (def.expires && new Date() > new Date(def.expires)) {
-                setPromoStatus(`“${code}” has expired.`, 'error'); return;
+                setPromoStatus(`"${code}" has expired.`, 'error'); return;
             }
             const subtotal = cart.reduce((s, i) => s + i.price * i.quantity, 0);
             if (subtotal < (def.minSubtotal || 0)) {
-                setPromoStatus(`“${code}” requires a minimum subtotal of £${def.minSubtotal.toFixed(2)}.`, 'error');
+                setPromoStatus(`"${code}" requires a minimum subtotal of £${def.minSubtotal.toFixed(2)}.`, 'error');
                 return;
             }
             try { localStorage.setItem(PROMO_KEY, JSON.stringify({ code })); } catch {}
@@ -908,7 +914,6 @@
                 }
             }
 
-            // Sync promo input UI
             if (promoInput) promoInput.value = promo ? promo.code : '';
             if (promoRemove) promoRemove.classList.toggle('hidden', !promo);
             if (promo) setPromoStatus(`Applied: ${promo.label}`, 'ok');
@@ -1012,7 +1017,6 @@
                 }
             }
 
-            // Show the checkout modal with a clear manual fallback
             const modal = document.getElementById('checkout-modal');
             modal.classList.remove('hidden');
             requestAnimationFrame(() => {
@@ -1020,7 +1024,6 @@
                 modal.querySelector('.bg-nude-50')?.classList.remove('scale-95');
             });
 
-            // Update the modal's helper text with the live order summary
             const summaryEl = document.getElementById('checkout-summary');
             if (summaryEl) {
                 const lines = cart.map(i => `${i.title} ${i.variant} ×${i.quantity} — £${(i.price * i.quantity).toFixed(2)}`);
